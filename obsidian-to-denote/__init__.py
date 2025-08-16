@@ -1,5 +1,4 @@
-"""
-Obsidian to Denote Converter
+"""Obsidian to Denote Converter
 
 A tool to convert Obsidian markdown files to Denote format.
 """

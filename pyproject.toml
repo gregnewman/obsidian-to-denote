@@ -38,10 +38,6 @@ Homepage = "https://github.com/gregnewman/obsidian-to-denote"
 Repository = "https://github.com/gregnewman/obsidian-to-denote.git"
 Issues = "https://github.com/gregnewman/obsidian-to-denote/issues"
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [tool.uv]
 dev-dependencies = [
     "pytest>=7.0",
