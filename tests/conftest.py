@@ -1,11 +1,8 @@
-"""
-Pytest configuration and shared fixtures
+"""Pytest configuration and shared fixtures
 """
 
+
 import pytest
-import tempfile
-import shutil
-from pathlib import Path
 
 
 @pytest.fixture
@@ -13,18 +10,18 @@ def temp_vault(tmp_path):
     """Create a temporary Obsidian vault with sample content"""
     vault = tmp_path / "test_vault"
     vault.mkdir()
-    
+
     # Create .obsidian folder to identify as vault
     (vault / ".obsidian").mkdir()
-    
+
     # Create sample structure
     (vault / "attachments").mkdir()
     (vault / "projects").mkdir()
     (vault / "daily").mkdir()
     (vault / "archive").mkdir()
-    
+
     # Create sample notes with various features
-    
+
     # Note with full metadata
     (vault / "welcome.md").write_text("""---
 title: Welcome to My Vault
@@ -60,7 +57,7 @@ def greet(name):
 - [x] Create welcome note
 - [ ] Add more content
 """)
-    
+
     # Project note with image
     (vault / "projects" / "project-alpha.md").write_text("""---
 title: Project Alpha
@@ -80,7 +77,7 @@ See also [[projects/project-beta|Project Beta]] for related work.
 - [[meeting-notes-2024-01-15]]
 - ![[project-spec.pdf]]
 """)
-    
+
     # Daily note without frontmatter
     (vault / "daily" / "2024-01-15.md").write_text("""# Daily Note - January 15, 2024
 
@@ -97,7 +94,7 @@ See also [[projects/project-beta|Project Beta]] for related work.
 - [x] Update project status
 - [ ] Prepare tomorrow's presentation
 """)
-    
+
     # Archive note with minimal content
     (vault / "archive" / "old-ideas.md").write_text("""Random ideas from last year
 
@@ -105,7 +102,7 @@ See also [[projects/project-beta|Project Beta]] for related work.
 - Idea 2
 - Link to [[nonexistent-note]]
 """)
-    
+
     # Note with special characters
     (vault / "special-éñçödīng.md").write_text("""---
 title: Unicode Test Note
@@ -118,12 +115,12 @@ This note has spëcial chàracters in the filename and content.
 
 Über café naïve résumé 日本語 中文 العربية
 """)
-    
+
     # Create fake attachments
     (vault / "attachments" / "architecture.png").write_bytes(b"PNG\x89fake image data")
     (vault / "attachments" / "project-spec.pdf").write_bytes(b"%PDF-1.4 fake pdf")
     (vault / "daily" / "meeting-notes-2024-01-15.md").write_text("# Meeting Notes\n\nDiscussed project timeline.")
-    
+
     return vault
 
 
