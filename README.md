@@ -1,6 +1,6 @@
 # Obsidian to Denote Converter
 
-A powerful Python tool to convert Obsidian markdown files to Denote format, supporting both org-mode and markdown output with full preservation of links, assets, and metadata.
+A Python tool to convert Obsidian markdown files to Denote format, supporting both org-mode and markdown output with full preservation of links, assets, and metadata.
 
 ## Features
 
