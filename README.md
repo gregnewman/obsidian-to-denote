@@ -34,6 +34,9 @@ A Python tool to convert Obsidian markdown files to Denote format, supporting bo
 # Install uv if you haven't already
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# Or with Homebrew
+brew install uv
+
 # Clone the repository
 git clone https://github.com/gregnewman/obsidian-to-denote.git
 cd obsidian-to-denote
