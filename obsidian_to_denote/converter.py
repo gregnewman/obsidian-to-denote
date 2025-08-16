@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""Obsidian to Denote Converter
-Converts Obsidian markdown files to Denote format (org-mode or markdown)
-"""
-
 import argparse
 import hashlib
 import os
