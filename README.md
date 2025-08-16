@@ -66,29 +66,31 @@ pip install -e .
 You can also run the converter directly without installation:
 
 ```bash
-python obsidian_to_denote/converter.py [options]
+uv run python obsidian_to_denote/converter.py [options]
 ```
 
 ## Usage
+
+**Note:** All commands below assume you're using `uv`. If you've activated the virtual environment with `source .venv/bin/activate`, you can omit the `uv run` prefix.
 
 ### Basic Conversion
 
 Convert an entire Obsidian vault to org-mode format:
 
 ```bash
-obsidian-to-denote /path/to/obsidian/vault /path/to/denote/notes
+uv run obsidian-to-denote /path/to/obsidian/vault /path/to/denote/notes
 ```
 
 Or use the short alias:
 
 ```bash
-o2d /path/to/obsidian/vault /path/to/denote/notes
+uv run o2d /path/to/obsidian/vault /path/to/denote/notes
 ```
 
 ### Convert Single File
 
 ```bash
-o2d my-note.md output-dir/
+uv run o2d my-note.md output-dir/
 ```
 
 ### Output Format Options
@@ -96,13 +98,13 @@ o2d my-note.md output-dir/
 Keep markdown format with Denote naming:
 
 ```bash
-o2d vault/ output/ --format md
+uv run o2d vault/ output/ --format md
 ```
 
 Convert to org-mode (default):
 
 ```bash
-o2d vault/ output/ --format org
+uv run o2d vault/ output/ --format org
 ```
 
 ### Directory Structure Options
@@ -110,19 +112,19 @@ o2d vault/ output/ --format org
 **Default: Flatten to single directory (Denote standard)**
 
 ```bash
-o2d vault/ output/
+uv run o2d vault/ output/
 ```
 
 **Preserve original directory structure:**
 
 ```bash
-o2d vault/ output/ --preserve-structure
+uv run o2d vault/ output/ --preserve-structure
 ```
 
 **Flatten but add folder names as tags:**
 
 ```bash
-o2d vault/ output/ --add-folder-tags
+uv run o2d vault/ output/ --add-folder-tags
 ```
 
 ### Asset Handling Options
@@ -130,25 +132,25 @@ o2d vault/ output/ --add-folder-tags
 **Copy assets to output directory (default):**
 
 ```bash
-o2d vault/ output/ --assets copy
+uv run o2d vault/ output/ --assets copy
 ```
 
 **Keep original asset paths:**
 
 ```bash
-o2d vault/ output/ --assets link
+uv run o2d vault/ output/ --assets link
 ```
 
 **Ignore assets:**
 
 ```bash
-o2d vault/ output/ --assets ignore
+uv run o2d vault/ output/ --assets ignore
 ```
 
 **Specify custom assets directory:**
 
 ```bash
-o2d vault/ output/ --assets copy --assets-dir attachments
+uv run o2d vault/ output/ --assets copy --assets-dir attachments
 ```
 
 ### Link Handling
@@ -156,7 +158,7 @@ o2d vault/ output/ --assets copy --assets-dir attachments
 **Preserve WikiLinks in markdown output:**
 
 ```bash
-o2d vault/ output/ --format md --preserve-links
+uv run o2d vault/ output/ --format md --preserve-links
 ```
 
 ## Command Line Options
@@ -206,7 +208,7 @@ Example conversions:
 Convert an Obsidian vault to org-mode, copying all assets:
 
 ```bash
-o2d ~/Documents/ObsidianVault ~/Documents/DenoteNotes --format org --assets copy
+uv run o2d ~/Documents/ObsidianVault ~/Documents/DenoteNotes --format org --assets copy
 ```
 
 ### Example 2: Markdown to Markdown with Structure
@@ -214,7 +216,7 @@ o2d ~/Documents/ObsidianVault ~/Documents/DenoteNotes --format org --assets copy
 Keep markdown format and directory structure:
 
 ```bash
-o2d ~/ObsidianVault ~/DenoteNotes --format md --preserve-structure --preserve-links
+uv run o2d ~/ObsidianVault ~/DenoteNotes --format md --preserve-structure --preserve-links
 ```
 
 ### Example 3: Flatten with Context
@@ -222,7 +224,7 @@ o2d ~/ObsidianVault ~/DenoteNotes --format md --preserve-structure --preserve-li
 Flatten structure but preserve context through tags:
 
 ```bash
-o2d ~/ObsidianVault ~/DenoteNotes --add-folder-tags --assets copy
+uv run o2d ~/ObsidianVault ~/DenoteNotes --add-folder-tags --assets copy
 ```
 
 ## Development
