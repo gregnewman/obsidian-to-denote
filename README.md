@@ -35,10 +35,11 @@ A Python tool to convert Obsidian markdown files to Denote format, supporting bo
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone the repository
-git clone https://github.com/yourusername/obsidian-to-denote.git
+git clone https://github.com/gregnewman/obsidian-to-denote.git
 cd obsidian-to-denote
 
-# Install with uv
+# Create virtual environment and install
+uv venv
 uv pip install -e .
 
 # Or run directly without installing
@@ -51,6 +52,10 @@ uv run obsidian-to-denote --help
 # Clone the repository
 git clone https://github.com/yourusername/obsidian-to-denote.git
 cd obsidian-to-denote
+
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install with pip
 pip install -e .
@@ -226,16 +231,18 @@ o2d ~/ObsidianVault ~/DenoteNotes --add-folder-tags --assets copy
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/obsidian-to-denote.git
+git clone https://github.com/gregnewman/obsidian-to-denote.git
 cd obsidian-to-denote
 
-# Install with development dependencies using uv
-uv pip install -e ".[dev]"
-
-# Or create a virtual environment with uv
+# Create virtual environment with uv
 uv venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-uv pip install -e ".[dev]"
+
+# Install with development dependencies
+uv pip install -e .
+uv pip install pytest pytest-cov black ruff
+
+# Or if dev dependencies are in pyproject.toml (optional)
+# uv pip install -e ".[dev]"
 ```
 
 ### Run Tests
@@ -348,6 +355,6 @@ For vaults with thousands of notes:
 ## Support
 
 For issues, questions, or suggestions:
-- Open an issue on [GitHub](https://github.com/yourusername/obsidian-to-denote/issues)
+- Open an issue on [GitHub](https://github.com/gregnewman/obsidian-to-denote/issues)
 - Check existing issues for solutions
 - Provide vault structure examples when reporting bugs
