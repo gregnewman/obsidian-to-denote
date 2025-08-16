@@ -242,9 +242,6 @@ uv venv
 # Install with development dependencies
 uv pip install -e .
 uv pip install pytest pytest-cov black ruff
-
-# Or if dev dependencies are in pyproject.toml (optional)
-# uv pip install -e ".[dev]"
 ```
 
 ### Run Tests
