@@ -102,9 +102,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Or using Homebrew
 brew install uv
-
-# On Windows using PowerShell
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 Then clone and install the converter:
@@ -131,7 +128,7 @@ cd obsidian-to-denote
 
 # Create virtual environment
 python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+source .venv/bin/activate
 
 # Install with pip
 pip install -e .
@@ -379,7 +376,6 @@ obsidian-to-denote/
 - **Python**: 3.8+
 - **Obsidian**: All versions (tested with vaults from v0.15+)
 - **Denote**: Compatible with Denote 2.0+ naming conventions
-- **Operating Systems**: Windows, macOS, Linux
 
 ## Limitations
 
