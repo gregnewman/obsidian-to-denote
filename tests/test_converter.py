@@ -1,6 +1,3 @@
-"""Tests for Obsidian to Denote Converter
-"""
-
 import shutil
 import tempfile
 from pathlib import Path

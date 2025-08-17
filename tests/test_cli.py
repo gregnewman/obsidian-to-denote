@@ -1,6 +1,3 @@
-"""Tests for CLI functionality
-"""
-
 import subprocess
 import sys
 
