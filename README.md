@@ -1,6 +1,70 @@
 # Obsidian to Denote Converter
 
-A Python tool to convert Obsidian markdown files to Denote format, supporting both org-mode and markdown output with full preservation of links, assets, and metadata.
+A Python project to convert Obsidian markdown files to Denote format, supporting both org-mode and markdown output with full preservation of links, assets, and metadata.
+
+## Disclaimer
+
+This converter was created to migrate my personal Obsidian vault(s) to Denote. It has been tested primarily with my own vault structure and may not cover all possible Obsidian configurations or edge cases. This project was developed with some assistance from Claude (Anthropic's AI assistant).
+
+**Please test this converter on a COPY of your vault first!** While it works well for my use case, your vault may have different features, plugins, or organizational patterns that haven't been tested.
+
+## Features That Need Testing/Verification
+
+The following features have been implemented but should be verified against your specific vault:
+
+### Core Functionality
+- [ ] **YAML Frontmatter Parsing** - Complex metadata structures, nested values, special characters
+- [ ] **Tag Extraction** - Inline tags, frontmatter tags, tags with special characters
+- [ ] **Title Detection** - Fallback from metadata → first heading → filename
+- [ ] **Timestamp Generation** - Uses file modification time or frontmatter created date
+
+### Link Handling
+- [ ] **WikiLinks** - Basic `[[note]]` and aliased `[[note|display text]]` links
+- [ ] **Embedded Images** - `![[image.png]]` syntax
+- [ ] **Embedded Files** - PDFs, documents, and other attachments
+- [ ] **Standard Markdown Links** - Regular `[text](url)` links
+- [ ] **Relative Path Links** - Links with folder paths like `[[folder/note]]`
+
+### Asset Management
+- [ ] **Image Files** - PNG, JPG, GIF, SVG formats
+- [ ] **Document Attachments** - PDF, DOCX, XLSX, PPTX files
+- [ ] **Asset Discovery** - Searches common folders (attachments/, assets/, images/)
+- [ ] **Asset Path Resolution** - Handles various Obsidian attachment folder configurations
+
+### Content Conversion (Org-mode)
+- [ ] **Headers** - All levels (# through ######)
+- [ ] **Emphasis** - Bold, italic, strikethrough, inline code
+- [ ] **Lists** - Ordered, unordered, nested lists
+- [ ] **Checkboxes** - Task lists with [ ] and [x]
+- [ ] **Code Blocks** - With language specifications
+- [ ] **Tables** - Basic markdown tables (limited support)
+- [ ] **Block Quotes** - May need additional testing
+
+### Directory Handling
+- [ ] **Nested Folders** - Deep directory structures
+- [ ] **Folder Name Tags** - Adding folder names as tags when flattening
+- [ ] **Structure Preservation** - Maintaining original folder hierarchy
+- [ ] **Special Characters in Paths** - Unicode, spaces, special characters
+
+### Known Limitations
+- **Obsidian Plugins** - Plugin-specific syntax (Dataview, Templater, etc.) is not processed
+- **Canvas Files** - `.canvas` files are ignored
+- **Graph View** - Graph relationships are not explicitly preserved
+- **Aliases** - Only first alias is used for title generation
+- **Block References** - `^block-id` references are not updated
+- **Embedded Searches** - Query blocks are not processed
+- **Excalidraw** - Drawing files are not handled
+
+### Vault-Specific Considerations
+Your vault may have:
+- Custom attachment folder locations
+- Non-standard organizational patterns
+- Plugin-generated content or metadata
+- Large files or many assets
+- Symbolic links or junction points
+- Case-sensitive filename requirements
+
+**Please report any issues or edge cases you encounter!**
 
 ## Features
 
@@ -30,13 +94,22 @@ A Python tool to convert Obsidian markdown files to Denote format, supporting bo
 
 ### Using uv (Recommended)
 
+First, install `uv` if you haven't already:
+
 ```bash
-# Install uv if you haven't already
+# On macOS/Linux using curl
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Or with Homebrew
+# Or using Homebrew
 brew install uv
 
+# On Windows using PowerShell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Then clone and install the converter:
+
+```bash
 # Clone the repository
 git clone https://github.com/gregnewman/obsidian-to-denote.git
 cd obsidian-to-denote
@@ -245,6 +318,9 @@ uv venv
 # Install with development dependencies
 uv pip install -e .
 uv pip install pytest pytest-cov black ruff
+
+# Or if dev dependencies are in pyproject.toml (optional)
+# uv pip install -e ".[dev]"
 ```
 
 ### Run Tests
