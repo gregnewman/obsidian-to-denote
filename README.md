@@ -4,7 +4,7 @@ A Python project to convert Obsidian markdown files to [Denote](https://protesil
 
 ## Disclaimer
 
-This converter was created to migrate my personal Obsidian vault(s) to Denote. It has been tested primarily with my own vault structure and may not cover all possible Obsidian configurations or edge cases. This project was developed with some assistance from Claude (Anthropic's AI assistant).
+This converter was created to migrate my personal Obsidian vault(s) to Denote. It has been tested primarily with my own vault structure and may not cover all possible Obsidian configurations or edge cases. This project was developed with some assistance from Claude (Anthropic).
 
 **⚠️ Please test this converter on a COPY of your vault first!** While it works well for my use case, your vault may have different features, plugins, or organizational patterns that haven't been tested.
 
@@ -425,10 +425,3 @@ For vaults with thousands of notes:
 - The converter processes files sequentially
 - Progress is displayed for each file
 - Consider converting in batches if needed
-
-## Support
-
-For issues, questions, or suggestions:
-- Open an issue on [GitHub](https://github.com/gregnewman/obsidian-to-denote/issues)
-- Check existing issues for solutions
-- Provide vault structure examples when reporting bugs
