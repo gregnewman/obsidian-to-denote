@@ -48,7 +48,7 @@ The following features have been implemented but should be verified against your
 
 ### Known Limitations
 - **Obsidian Plugins** - Plugin-specific syntax (Dataview, Templater, etc.) is not processed
-- **Canvas Files** - `.canvas` files are ignored
+- **Canvas Files** - `.canvas` files are ignored (I do not have these in my vaults)
 - **Graph View** - Graph relationships are not explicitly preserved
 - **Aliases** - Only first alias is used for title generation
 - **Block References** - `^block-id` references are not updated
@@ -388,10 +388,10 @@ obsidian-to-denote/
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request (please ensure tests are updated an passing)
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m 'Add some YourFeature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a Pull Request (please ensure tests are updated an passing first)
 
 ## License
 
