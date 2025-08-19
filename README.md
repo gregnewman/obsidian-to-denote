@@ -1,6 +1,6 @@
 # Obsidian to Denote Converter
 
-This is a personal Python project I'm using to convert Obsidian markdown files to [Denote](https://protesilaos.com/emacs/denote) format, supporting both org-mode and markdown output with full preservation of links, assets, and metadata.
+This is a personal Python project I'm building to convert Obsidian markdown files to [Denote](https://protesilaos.com/emacs/denote) format, supporting both org-mode and markdown output with full preservation of links, assets, and metadata.
 
 ## Disclaimer
 
