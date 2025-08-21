@@ -13,8 +13,8 @@ This converter was created to migrate my personal Obsidian vault(s) to Denote. I
 The following features have been implemented but should be verified against your specific vault:
 
 ### Core Functionality
-- [ ] **YAML Frontmatter Parsing** - Complex metadata structures, nested values, special characters
-- [ ] **Tag Extraction** - Inline tags, frontmatter tags, tags with special characters
+- [x] **YAML Frontmatter Parsing** - Complex metadata structures, nested values, special characters
+- [x] **Tag Extraction** - Inline tags, frontmatter tags, tags with special characters
 - [x] **Title Detection** - Fallback from filename → metadata → first heading
 - [ ] **Timestamp Generation** - Uses file modification time or frontmatter created date
 
@@ -32,11 +32,11 @@ The following features have been implemented but should be verified against your
 - [ ] **Asset Path Resolution** - Handles various Obsidian attachment folder configurations
 
 ### Content Conversion (Org-mode)
-- [ ] **Headers** - All levels (# through ######)
-- [ ] **Emphasis** - Bold, italic, strikethrough, inline code
-- [ ] **Lists** - Ordered, unordered, nested lists
-- [ ] **Checkboxes** - Task lists with [ ] and [x]
-- [ ] **Code Blocks** - With language specifications
+- [x] **Headers** - All levels (# through ######)
+- [x] **Emphasis** - Bold, italic, strikethrough, inline code
+- [x] **Lists** - Ordered, unordered, nested lists
+- [x] **Checkboxes** - Task lists with [ ] and [x]
+- [x] **Code Blocks** - With language specifications
 - [ ] **Tables** - Basic markdown tables (limited support)
 - [ ] **Block Quotes** - May need additional testing
 
