@@ -15,7 +15,7 @@ The following features have been implemented but should be verified against your
 ### Core Functionality
 - [ ] **YAML Frontmatter Parsing** - Complex metadata structures, nested values, special characters
 - [ ] **Tag Extraction** - Inline tags, frontmatter tags, tags with special characters
-- [ ] **Title Detection** - Fallback from metadata → first heading → filename
+- [x] **Title Detection** - Fallback from filename → metadata → first heading
 - [ ] **Timestamp Generation** - Uses file modification time or frontmatter created date
 
 ### Link Handling
